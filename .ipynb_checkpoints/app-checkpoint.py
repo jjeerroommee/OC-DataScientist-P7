@@ -3,11 +3,6 @@ from flask import Flask, render_template, jsonify
 
 app = Flask(__name__)
 
-# Loads a model previously saved 
-path_to_model = "models/"
-model_name = 'lr-pipe_8feat.joblib'
-model = joblib.load(path_to_model + model_name)
-print(model[0])
 
 @app.route('/')
 def home():
@@ -17,6 +12,12 @@ def home():
 
 @app.route('/predict/')
 def classif():
+
+    # Loads a model previously saved 
+    path_to_model = "./models/"
+    model_name = 'lr-pipe_8feat.joblib'
+    model = joblib.load(path_to_model + model_name)
+    
     return jsonify({
       'classe': 'crédit accordé', 
       'probabilité de défaut de paiement': 0.2
