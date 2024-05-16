@@ -1,4 +1,5 @@
 import joblib
+import os
 from flask import Flask, render_template, jsonify
 
 app = Flask(__name__)
@@ -14,10 +15,8 @@ def home():
 def classif():
 
     # Loads a model previously saved 
-    path_to_model = "./models/"
-    model_name = 'lr-pipe_8feat.joblib'
-    model = joblib.load(path_to_model + model_name)
-    
+    model = joblib.load(os.path.join('models', 'lr-pipe_8feat.joblib'))
+        
     return jsonify({
       'classe': 'crédit accordé', 
       'probabilité de défaut de paiement': 0.2
