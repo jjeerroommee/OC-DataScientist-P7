@@ -4,13 +4,14 @@ from flask import Flask, render_template, jsonify
 app = Flask(__name__)
 
 # Loads a model previously saved 
-path_to_model = "models/"
-model_name = 'lr-pipe_8feat.joblib'
-model = joblib.load(path_to_model + model_name)
+#path_to_model = "models/"
+#model_name = 'lr-pipe_8feat.joblib'
+#model = joblib.load(path_to_model + model_name)
 
 @app.route('/')
 def home():
-   return render_template('index.html')
+    print("hello")
+    return render_template('index.html')
 
 
 
