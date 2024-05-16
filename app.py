@@ -7,13 +7,14 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
+    print("hello")
     return render_template('index.html')
 
 
 
 @app.route('/predict/')
 def classif():
-
+    print(os.path.join('models', 'lr-pipe_8feat.joblib'))
     # Loads a model previously saved 
     model = joblib.load(os.path.join('models', 'lr-pipe_8feat.joblib'))
         
