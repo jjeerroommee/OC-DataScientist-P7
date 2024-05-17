@@ -1,23 +1,21 @@
 import joblib
 import os
 from flask import Flask, render_template, jsonify
-import sklearn
-import numpy as np
+
 
 app = Flask(__name__)
 
 
 @app.route('/')
 def home():
-    print("hello")
-    print(os.listdir())
+    #print("hello home")
     return render_template('index.html')
 
 
 
 @app.route('/predict/')
 def classif():
-    print(os.path.join('models', 'lr-pipe_8feat.joblib'))
+    #print("hello predict")
     # Loads a model previously saved 
     model = joblib.load(os.path.join('models', 'lr-pipe_8feat.joblib'))
         
