@@ -21,9 +21,12 @@ def request_prediction(data):
 
 
 def main():
-    st.title("Test de l'API de prédiction de solvabilité d'un client bancaire")
+    st.title("API de prédiction de solvabilité d'un client bancaire")
+    st.header("Interface de test locale (streamlit)")
+    
+    st.markdown("Saisir les variables décrivant la situation d'un client :")
+    
     data={}
-        
     data['EXT_SOURCE_3'] = [st.number_input('ext_source_3 (décimal entre 0 et 1)',
                                    min_value=0., max_value=1.0, value=0.50, step=0.01)]
 
@@ -49,10 +52,15 @@ def main():
                                                 min_value=0, max_value=100, value=14, step=1)]
 
     predict_btn = st.button('Prédire')
+    st.markdown("L'API retourne la classe (*accepté*/*refusé*) et la valeur prédite par le modèle :")
+    st.markdown("\t- crédit accepté si probabilité de défaut du client ~ 0")
+    st.markdown("\t- crédit refusé si probabilité de défaut du client ~ 1")
+    st.markdown("---")
+
     if predict_btn :
         pred = request_prediction(data)
-        st.write('Classe (crédit accepté ou refusé) : ', pred['classe'])
-        st.write('Probabilité de défaut du client (0 : client  solvable): ', pred['proba_echec'])
+        st.write('Classe : ', pred['classe'])
+        st.write('Probabilité de défaut : ', pred['proba_echec'])
 
 
 if __name__ == '__main__':
