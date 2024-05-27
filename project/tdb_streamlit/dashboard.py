@@ -11,6 +11,7 @@ def request_prediction(data):
         
         #url='http://localhost:5000/predict', # when using a local flask server
         url='https://oc-datascientist-p7-lgbm.azurewebsites.net/predict/', # when using an Azure clouded server
+        
         json=data_json)
     
     if response.status_code != 200 :
