@@ -1,0 +1,16 @@
+aliases: []
+creation_timestamp: 1716550332469
+current_stage: None
+description: ''
+last_updated_timestamp: 1716550332469
+name: OC-DataScientist-P7__random-forest
+run_id: 42b677bbad564f9fa23366bc958059e6
+run_link: ''
+source: mlflow-artifacts:/111126380772314288/42b677bbad564f9fa23366bc958059e6/artifacts/Kaggle
+  Kernel with simple features (Aguiar)
+status: READY
+status_message: null
+storage_location: mlflow-artifacts:/111126380772314288/42b677bbad564f9fa23366bc958059e6/artifacts/Kaggle
+  Kernel with simple features (Aguiar)
+user_id: null
+version: 1

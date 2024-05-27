@@ -9,7 +9,7 @@ def request_prediction(data):
         method='POST',
         headers={"Content-Type": "application/json"},
         
-        # url='http://localhost:5000/predict', # when using a local flask server
+        #url='http://localhost:5000/predict', # when using a local flask server
         url='https://oc-datascientist-p7-lgbm.azurewebsites.net/predict/', # when using an Azure clouded server
         json=data_json)
     

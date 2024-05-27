@@ -15,8 +15,10 @@ def home():
 
 @app.route('/predict/', methods=['POST'])
 def classif():
+    #print(request.full_path)
+        
     # Loads a model previously saved 
-    model = joblib.load(os.path.join('models', 'lr-pipe_8feat.joblib'))
+    model = joblib.load(os.path.join('models', 'lgbm_8feat.joblib'))
         
     # Gets a dataframe of features from the post request's body
     data_json = request.get_json()

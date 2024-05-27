@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/111126380772314288/054e71b4c23c4a548d162ea864ba6d82/artifacts
+end_time: 1716554202278
+entry_point_name: ''
+experiment_id: '111126380772314288'
+lifecycle_stage: active
+run_id: 054e71b4c23c4a548d162ea864ba6d82
+run_name: hilarious-turtle-566
+run_uuid: 054e71b4c23c4a548d162ea864ba6d82
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1716554188351
+status: 3
+tags: []
+user_id: DTCB8049
