@@ -1,11 +1,13 @@
 import joblib
 import os
+import sys
 import pandas as pd
 from flask import Flask, render_template, jsonify, request
 
+sys.path.append('./functions')
+from my_functions import load_model
 
 app = Flask(__name__)
-
 
 @app.route('/')
 def home():
@@ -18,7 +20,7 @@ def classif():
     #print(request.full_path)
         
     # Loads a model previously saved 
-    model = joblib.load(os.path.join('models', 'lgbm_8feat.joblib'))
+    model = load_model('./models')
         
     # Gets a dataframe of features from the post request's body
     data_json = request.get_json()
@@ -42,7 +44,7 @@ def classif():
 
 
 if __name__ == '__main__':
-   app.run()
+    app.run()
 
 
 
